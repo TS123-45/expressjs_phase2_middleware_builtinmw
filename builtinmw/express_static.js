@@ -5,9 +5,8 @@ const app = express();
 const PORT = 3500;
 
 /* Serve static files */
-const publicpath = path.join(__dirname, "..", "..", "..", "public");
-console.log(publicpath);
-app.use(express.static(publicpath));
+console.log(__dirname);
+app.use(express.static(path.join(__dirname, "..", "..", "..", "public")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(path.join(publicpath,"indexone.html")));
